@@ -25,5 +25,5 @@ npm run lint
 1. Start Franklin Proxy: `hlx up` (opens your browser at `http://localhost:3000`)
 1. Open the `{repo}` directory in your favorite IDE and start coding :)
 
-## Google Drive Content Folder
+## Google Drive Content Repository Folder
 - https://drive.google.com/drive/u/1/folders/1wyfr8jyvnz9o0LvylJiyR-bYkDAKI7kG
