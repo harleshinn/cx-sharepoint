@@ -19,7 +19,7 @@
   display: block;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 768px) {
   .columns > div {
     align-items: center;
     flex-direction: unset;
@@ -29,5 +29,76 @@
   .columns > div > div {
     flex: 1;
     order: unset;
+  }
+}
+
+/* Custom style: Author and Article Header */
+main .section.author-header .columns > div,
+main .section.article-header .columns > div {
+  gap: 24px 30px;
+}
+main .section.author-header .columns .columns-img-col img,
+main .section.article-header .columns .columns-img-col img {
+  border-radius: 6px;
+}
+main .section.author-header .columns > div > div > h1,
+main .section.article-header .columns > div > div > h1 {
+  margin: 0 0 8px;
+  font-size: 28px;
+}
+main .section.author-header .columns > div > div > p,
+main .section.article-header .columns > div > div > p {
+  margin: 0;
+  font-size: 18px;
+  text-align: justify;
+}
+main .section.article-header .columns > div > div > h4 {
+  font-size: 14px;
+  margin-bottom: 20px;
+  font-weight: normal;
+}
+@media screen and (min-width: 768px) {
+  main .section.author-header .columns .columns-img-col img,
+  main .section.article-header .columns .columns-img-col img {
+    border-radius: 12px;
+  }
+  main .section.author-header .columns > div > div > h1,
+  main .section.article-header .columns > div > div > h1 {
+    font-size: 36px;
+  }
+  main .section.author-header .columns > div > div > p,
+  main .section.article-header .columns > div > div > p {
+    font-size: 20px;
+  }
+  main .section.article-header .columns > div > div > h4 {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main .section.author-header .columns > div,
+  main .section.article-header .columns > div {
+    column-gap: calc(40px + 100% * (1/12));
+  }
+  main .section.author-header .columns > div > div > h1,
+  main .section.article-header .columns > div > div > h1 {
+    font-size: 48px;
+    margin-bottom: 16px;
+  }
+}
+@media screen and (min-width: 1700px) {
+  main .section.author-header .columns > div,
+  main .section.article-header .columns > div {
+    column-gap: calc(40px + 100% * (2/12));
+  }
+  main .section.author-header .columns > div > div > h1,
+  main .section.article-header .columns > div > div > h1 {
+    font-size: 64px;
+  }
+  main .section.author-header .columns > div > div > p,
+  main .section.article-header .columns > div > div > p {
+    font-size: 22px;
+  }
+  main .section.article-header .columns > div > div > h4 {
+    font-size: 18px;
   }
 }

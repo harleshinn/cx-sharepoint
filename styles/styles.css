@@ -249,3 +249,24 @@ main .section {
 main .section.highlight {
   background-color: var(--highlight-background-color);
 }
+
+
+/* Custom section: Author and Article Header */
+main .section.author-header, main .section.article-header {
+  background-color: #f7f7f7;
+  padding: 0;
+}
+main .section.author-header > div, main .section.article-header > div {
+  box-sizing: border-box;
+  padding: 80px 20px;
+}
+@media screen and (min-width: 768px) {
+  main .section.author-header > div, main .section.article-header > div {
+    padding: 80px 30px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main .section.author-header > div, main .section.article-header > div {
+    padding: 80px 40px;
+  }
+}
