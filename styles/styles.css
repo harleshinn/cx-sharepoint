@@ -262,11 +262,7 @@ main .section {
 
 /* section metadata */
 main .section.highlight {
-  background-color: var(--highlight-background-color);
-}
-
-main .section.highlight {
-  background-color: var(--highlight-background-color);
+  background-color: var(--brand-black);
   white-space: initial;
   color: #fff;
   text-align: center;
