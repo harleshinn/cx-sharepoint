@@ -46,3 +46,8 @@
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
+
+/* 3 columns card list */
+.card.3-col > ul {
+  grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+}
