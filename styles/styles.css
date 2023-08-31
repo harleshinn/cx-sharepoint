@@ -19,8 +19,18 @@
   --highlight-background-color: #ccc;
   --text-color: #000;
 
+  /* SN Brand Colors */
+  --brand-green: #86ed78;
+  --brand-green-darker: #62d84e;
+  --brand-blue: #032d42;
+  --brand-blue-lighter: #1a5d68;
+  --brand-black: #000;
+  --brand-gray: #999;
+  --btn-border-radius: 6px;
+  --brand-opacity: 0.5;
+
   /* fonts */
-  --body-font-family: roboto, roboto-fallback;
+  --body-font-family: GilroyRegular, roboto-fallback;
   --heading-font-family: var(--body-font-family);
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
 
@@ -38,7 +48,7 @@
   --heading-font-size-xs: 18px;
 
   /* nav height */
-  --nav-height: 64px;
+  --nav-height: 80px;
 
 }
 
@@ -250,6 +260,18 @@ main .section.highlight {
   background-color: var(--highlight-background-color);
 }
 
+main .section.highlight {
+  background-color: var(--highlight-background-color);
+  white-space: initial;
+  color: #fff;
+  text-align: center;
+}
+
+main .section.highlight h1, 
+main .section.highlight h2, 
+main .section.highlight h3,{
+  color: #fff;
+}
 
 /* Custom section: Author and Article Header */
 main .section.author-header, main .section.article-header {
