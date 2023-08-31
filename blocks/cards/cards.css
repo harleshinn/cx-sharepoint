@@ -48,6 +48,6 @@
 }
 
 /* 3 columns card list */
-.card.3-col > ul {
+.cards.col-3 > ul {
   grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
 }
