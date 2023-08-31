@@ -141,5 +141,16 @@ export default async function decorate(block) {
     navWrapper.className = 'nav-wrapper';
     navWrapper.append(nav);
     block.append(navWrapper);
+
+
+    // Custom code:
+    // transform strong title into h2
+    const titles = document.querySelectorAll('.nav-drop strong');
+    titles.forEach((title) => {
+      const navTitle = document.createElement('h2');
+      navTitle.classList.add('nav-drop__title');
+      navTitle.textContent = title.textContent;
+      title.replaceWith(navTitle);
+    });
   }
 }
