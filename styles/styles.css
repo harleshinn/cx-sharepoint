@@ -12,8 +12,8 @@
 
  :root {
   /* colors */
-  --link-color: #035fe6;
-  --link-hover-color: #136ff6;
+  --link-color: #000;
+  --link-hover-color: #62d84e;
   --background-color: #fff;
   --overlay-background-color: #eee;
   --highlight-background-color: #ccc;
@@ -192,8 +192,7 @@ a:any-link {
 }
 
 a:hover {
-  text-decoration: underline;
-  color: var(--link-hover-color);
+  text-decoration: none;
 }
 
 /* buttons */
@@ -224,6 +223,19 @@ a.button:any-link, button {
 a.button:hover, a.button:focus, button:hover, button:focus  {
   background-color: var( --brand-green);
   cursor: pointer;
+}
+
+main .section a {
+  /*border-bottom: 2px solid var(--link-hover-color);*/
+  background-image: linear-gradient(var(--link-hover-color), var(--link-hover-color));
+  background-size: .1rem .1rem;
+  background-repeat: repeat-x;
+  background-position: bottom;
+  transition: background-size .2s ease-in-out;
+}
+
+main .section a:hover {
+  background-size: 100% 100%;
 }
 
 button:disabled, button:disabled:hover {
