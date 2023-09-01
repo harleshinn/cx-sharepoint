@@ -1,9 +1,22 @@
+.cards-container h2{
+  font-family: GilroyBold,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+  font-size: var( --heading-font-size-s);
+}
+
+.cards-container h5{
+  font-family: GilroyBold;
+  font-size: var(--card-font-size-xxs);
+}
+.cards-container h4{
+  font-family: GilroyBold,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+  font-size: var(--body-font-size-xs);
+}
 .cards > ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 40px;
 }
 
@@ -33,6 +46,7 @@
   -webkit-line-clamp: 3;
   overflow: hidden;
   display: -webkit-box;
+  font-size: var(--card-font-size-xs);
 }
 
 .cards > ul > li img {
@@ -50,4 +64,55 @@
 /* 3 columns card list */
 .cards.col-3 > ul {
   grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+}
+.slideup ul li{
+  transform: translate3d(0,var(--y-position,150px),0);
+  transition: transform .5s var(--transition-delay,0s);
+  background-color: #F7F7F7;
+}
+
+.slideup ul li.come-in {
+  transform: translateY(0);
+}
+
+@media (min-width: 768px){
+  .cards-container h2 {
+    font-size: var(--heading-font-size-m);
+  }
+  .cards-container h4 {
+    font-size: var(--heading-font-size-s);
+  }
+  .cards > ul {
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+
+  }
+  .cards > ul > li p{
+    font-size: var(--body-font-size-xs);
+  }
+}
+@media (min-width: 1024px){
+  .cards-container h2 {
+    font-size: var(--card-font-size-l);
+  }
+  .cards-container h4 {
+    font-size: var(--body-font-size-m);
+  }
+}
+@media (min-width: 1700px){
+  .cards-container h2 {
+    font-size: var(--card-font-size-xl);
+  }
+  .cards-container h4 {
+    font-size: var(--heading-font-size-s);
+    margin-bottom: 8px;
+    margin-top: 0;
+  }
+  .cards-container h5 {
+    margin-bottom: 8px;
+  }
+  .cards > ul > li p{
+    font-size: var(--body-font-size-s);
+    margin-top: 0;
+  }
+
 }

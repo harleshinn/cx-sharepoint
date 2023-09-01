@@ -15,4 +15,32 @@ export default function decorate(block) {
   ul.querySelectorAll('img').forEach((img) => img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }])));
   block.textContent = '';
   block.append(ul);
+
+
+ var visible = function(partial, el) {
+
+  var viewTop       = window.scrollY + 100,
+      viewBottom    = viewTop + window.innerHeight - 100,
+      _top          = el.offsetTop,
+      _bottom       = _top + el.offsetHeight,
+      compareTop    = partial === true ? _bottom : _top,
+      compareBottom = partial === true ? _top : _bottom;
+
+    return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
+
+};
+
+window.addEventListener('scroll', function(event) {
+  var allElem = document.querySelectorAll('.slideup li');
+  allElem.forEach(function(el, i) {
+    if (visible(true, el)) {
+      el.className = "come-in";
+      el.style.setProperty('--transition-delay', ''.concat(i + 1, '00ms'));
+    }
+  });
+});
+
+
+
+
 }
