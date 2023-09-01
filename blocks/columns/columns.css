@@ -41,36 +41,23 @@ main .section.author-header .columns .columns-img-col img,
 main .section.article-header .columns .columns-img-col img {
   border-radius: 6px;
 }
-main .section.author-header .columns > div > div > h1,
-main .section.article-header .columns > div > div > h1 {
-  margin: 0 0 8px;
-  font-size: 28px;
-}
-main .section.author-header .columns > div > div > p,
-main .section.article-header .columns > div > div > p {
-  margin: 0;
-  font-size: 18px;
-  text-align: justify;
-}
-main .section.article-header .columns > div > div > h4 {
+main .section.article-header .columns > div > div > p:first-child {
   font-size: 14px;
   margin-bottom: 20px;
-  font-weight: normal;
+}
+main .section.author-header .columns > div > div > p:last-child,
+main .section.article-header .columns > div > div > p:last-child {
+  margin-bottom: 0;
+}
+main .section.article-header .columns > div > div > p:last-child {
+  text-align: justify;
 }
 @media screen and (min-width: 768px) {
   main .section.author-header .columns .columns-img-col img,
   main .section.article-header .columns .columns-img-col img {
     border-radius: 12px;
   }
-  main .section.author-header .columns > div > div > h1,
-  main .section.article-header .columns > div > div > h1 {
-    font-size: 36px;
-  }
-  main .section.author-header .columns > div > div > p,
-  main .section.article-header .columns > div > div > p {
-    font-size: 20px;
-  }
-  main .section.article-header .columns > div > div > h4 {
+  main .section.article-header .columns > div > div > p:first-child {
     font-size: 16px;
   }
 }
@@ -79,26 +66,13 @@ main .section.article-header .columns > div > div > h4 {
   main .section.article-header .columns > div {
     column-gap: calc(40px + 100% * (1/12));
   }
-  main .section.author-header .columns > div > div > h1,
-  main .section.article-header .columns > div > div > h1 {
-    font-size: 48px;
-    margin-bottom: 16px;
-  }
 }
 @media screen and (min-width: 1700px) {
   main .section.author-header .columns > div,
   main .section.article-header .columns > div {
     column-gap: calc(40px + 100% * (2/12));
   }
-  main .section.author-header .columns > div > div > h1,
-  main .section.article-header .columns > div > div > h1 {
-    font-size: 64px;
-  }
-  main .section.author-header .columns > div > div > p,
-  main .section.article-header .columns > div > div > p {
-    font-size: 22px;
-  }
-  main .section.article-header .columns > div > div > h4 {
+  main .section.article-header .columns > div > div > p:first-child {
     font-size: 18px;
   }
 }
