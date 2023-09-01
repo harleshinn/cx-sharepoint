@@ -25,6 +25,7 @@ footer .footer .workflow-footer {
 footer .footer .workflow-footer .icon-workflow-logo {
   width: 100px;
   height: auto;
+  line-height: 0;
 }
 footer .footer .workflow-footer > div {
   display: grid;
@@ -44,6 +45,9 @@ footer .footer .workflow-footer > div > div:last-child {
 footer .footer .workflow-footer > div > div:last-child .icon {
   width: 40px;
   height: 40px;
+}
+footer .footer .workflow-footer > div > div a {
+  line-height: 21px;
 }
 @media screen and (min-width: 768px) {
   footer .footer .workflow-footer > div {
@@ -99,7 +103,15 @@ footer .footer .servicenow-footer > div > div {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 5px 12px;
+  gap: 6px 0;
+  line-height: normal;
+}
+footer .footer .servicenow-footer > div > div:nth-child(2) {
+  padding-bottom: 5px;
+}
+footer .footer .servicenow-footer > div > div:nth-child(2) a {
+  margin: 0 10px;
+  line-height: normal;
 }
 @media screen and (min-width: 1024px) {
   footer .footer .servicenow-footer > div > div {
