@@ -267,16 +267,16 @@ main .section {
 }
 
 /* section metadata */
-main .section.highlight {
+main .section.highlight.dark {
   background-color: var(--brand-black);
   white-space: initial;
   color: #fff;
   text-align: center;
 }
 
-main .section.highlight h1,
-main .section.highlight h2,
-main .section.highlight h3,{
+main .section.highlight.dark h1, 
+main .section.highlight.dark h2, 
+main .section.highlight.dark h3,{
   color: #fff;
 }
 
