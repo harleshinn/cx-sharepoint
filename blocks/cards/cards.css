@@ -21,6 +21,11 @@ main .section.article-header.cards-container > div.cards-wrapper{
   font-family: GilroyBold;
   font-size: var(--body-font-size-xs);
 }
+
+.cards-container .cards-wrapper h4 a {
+  background: none;
+}
+
 .cards > ul {
   list-style: none;
   margin: 0;
