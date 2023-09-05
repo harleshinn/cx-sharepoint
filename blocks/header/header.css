@@ -274,6 +274,25 @@ header nav .nav-tools {
 
 /* Custom Code */
 
+header nav .nav-sections ul.active {
+  display: block;
+  width: 33.33vw;
+  left: 33.33vw;
+  position: absolute;
+  top: 0;
+}
+
+header nav .nav-sections ul.active > li > ul {
+  position: absolute;
+  top: 0;
+  left: 33.33vw;
+}
+
+header nav .nav-sections ul.active > li > ul > li > ul {
+  position: absolute;
+  top: 0;
+}
+
 header nav .nav-sections li[aria-expanded="false"] ul {
   display: none;
 }

@@ -122,6 +122,7 @@ export default async function decorate(block) {
         });
       });
     }
+    
 
     // hamburger for mobile
     const hamburger = document.createElement('div');
@@ -141,6 +142,25 @@ export default async function decorate(block) {
     navWrapper.className = 'nav-wrapper';
     navWrapper.append(nav);
     block.append(navWrapper);
+
++  // Custom code: adding classes to nav and hiding/showing nav on hover
+    navSections.querySelectorAll('.nav-drop > ul > li').forEach((drop) => {
+      drop.querySelector('ul').classList.add('nav--third-level');
+      drop.querySelector('.nav--third-level > li > ul').classList.add('active');
+      
+      drop.addEventListener('mouseenter', (e) => {
+        drop.querySelector('ul').classList.add('active');
+      });
+
+      drop.addEventListener('mouseleave', (e) => {
+        drop.querySelector('ul').classList.remove('active');
+      });
+    });
+
+    // @toDo:
+    // each time an item in the nav is clicked should show
+    // first child item and sub-item visible as well (all the first items of that branch)
+
 
 
     // Custom code:
