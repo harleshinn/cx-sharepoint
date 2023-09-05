@@ -13,16 +13,16 @@ main .section.article-header.cards-container > div.cards-wrapper{
   font-size: var( --heading-font-size-s);
 }
 
-.cards-container .cards-wrapper h5{
+.cards-container .cards-wrapper h5, .cards-container .subheadline{
   font-family: GilroyBold;
   font-size: var(--card-font-size-xxs);
 }
-.cards-container .cards-wrapper h4{
+.cards-container .cards-wrapper h4, .cards-container .headline{
   font-family: GilroyBold;
   font-size: var(--body-font-size-xs);
 }
 
-.cards-container .cards-wrapper h4 a {
+.cards-container .cards-wrapper h4 a, .cards-container .headline a {
   background: none;
 }
 
@@ -94,7 +94,7 @@ main .section.article-header.cards-container > div.cards-wrapper{
   .cards-container h3 {
     font-size: var(--heading-font-size-m);
   }
-  .cards-container .cards-wrapper h4 {
+  .cards-container .cards-wrapper h4, .cards-container .headline {
     font-size: var(--heading-font-size-s);
   }
   .cards > ul {
@@ -109,7 +109,7 @@ main .section.article-header.cards-container > div.cards-wrapper{
   .cards-container h3 {
     font-size: var(--card-font-size-l);
   }
-  .cards-container .cards-wrapper h4 {
+  .cards-container .cards-wrapper h4, .cards-container .headline {
     font-size: var(--body-font-size-m);
   }
 }
@@ -117,12 +117,12 @@ main .section.article-header.cards-container > div.cards-wrapper{
   .cards-container h3 {
     font-size: var(--card-font-size-xl);
   }
-  .cards-container .cards-wrapper h4 {
+  .cards-container .cards-wrapper h4, .cards-container .headline {
     font-size: var(--heading-font-size-s);
     margin-bottom: 8px;
     margin-top: 0;
   }
-  .cards-container .cards-wrapper h5 {
+  .cards-container .cards-wrapper h5, .cards-container .subheadline {
     margin-bottom: 8px;
   }
   .cards > ul > li p{

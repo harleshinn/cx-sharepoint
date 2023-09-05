@@ -9,6 +9,24 @@ export default function decorate(block) {
     [...li.children].forEach((div) => {
       if (div.children.length === 1 && div.querySelector('picture')) div.className = 'cards-card-image';
       else div.className = 'cards-card-body';
+      if(div.childNodes.length > 0){
+        let childNodes = div.childNodes;
+        childNodes.forEach(function(el, i) {
+          if(el.innerHTML){
+            if (el.innerHTML.indexOf('subheadline') > 0 || el.innerHTML.indexOf('headline') > 0 ) {
+              let elClass = el.innerHTML.replace(/^.+-/,'');
+              let newText = el.innerHTML.substring(0, el.innerHTML.indexOf('(-'));
+
+              elClass = elClass.slice(0, -1);
+              el.className = elClass ;
+              newText = newText.slice(0, -1);
+              el.innerHTML = newText;
+            }
+          }
+
+        });
+      }
+
     });
     ul.append(li);
   });
