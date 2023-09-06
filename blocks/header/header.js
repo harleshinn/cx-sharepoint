@@ -113,16 +113,17 @@ export default async function decorate(block) {
     if (navSections) {
       navSections.querySelectorAll(':scope > ul > li').forEach((navSection) => {
         if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
-        navSection.addEventListener('click', () => {
+        navSection.addEventListener('click', (e) => {
           if (isDesktop.matches) {
             const expanded = navSection.getAttribute('aria-expanded') === 'true';
             toggleAllNavSections(navSections);
             navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+            showActiveSection(e);
           }
         });
       });
     }
-    
+
 
     // hamburger for mobile
     const hamburger = document.createElement('div');
@@ -147,7 +148,7 @@ export default async function decorate(block) {
     navSections.querySelectorAll('.nav-drop > ul > li').forEach((drop) => {
       drop.querySelector('ul').classList.add('nav--third-level');
       drop.querySelector('.nav--third-level > li > ul').classList.add('active');
-      
+
       drop.addEventListener('mouseenter', (e) => {
         drop.querySelector('ul').classList.add('active');
       });
@@ -161,6 +162,19 @@ export default async function decorate(block) {
     // each time an item in the nav is clicked should show
     // first child item and sub-item visible as well (all the first items of that branch)
 
+    const showActiveSection = function(e){
+      let sibling = e.target.nextElementSibling;
+      let highlightedChild = sibling.querySelectorAll('.highlight');
+      let firstChild = sibling.querySelector('li');
+      let activeFirstCol = sibling.querySelector('.nav--third-level');
+
+      highlightedChild.forEach(function(el, i) {
+        el.classList.remove("highlight");
+      });
+
+      firstChild.className = 'highlight';
+      activeFirstCol.classList.add("active");
+    }
 
 
     // Custom code:
