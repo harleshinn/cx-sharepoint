@@ -156,6 +156,20 @@ export default async function decorate(block) {
       drop.addEventListener('mouseleave', (e) => {
         drop.querySelector('ul').classList.remove('active');
       });
+
+
+      drop.querySelectorAll('.nav--third-level > li').forEach((thirdLevel) => {
+  
+        if(thirdLevel.querySelector('ul') !== null) {
+          thirdLevel.addEventListener('mouseenter', (e) => {
+            thirdLevel.querySelector('ul').classList.add('active');
+          });
+
+          thirdLevel.addEventListener('mouseleave', (e) => {
+            thirdLevel.querySelector('ul').classList.remove('active');
+          });
+        }
+      });
     });
 
     // @toDo:
@@ -175,6 +189,7 @@ export default async function decorate(block) {
       firstChild.className = 'highlight';
       activeFirstCol.classList.add("active");
     }
+
 
 
     // Custom code:
