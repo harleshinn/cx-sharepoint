@@ -1,47 +1,44 @@
 version: 1
+# See https://www.hlx.live/docs/setup-indexing.
 
 indices:
-  default:
+  site:
     include:
-      - /*/*/*/*
+      - '/cx-demo/**'
     exclude:
       - '**/Document.*'
     target: /query-index
+    # target: SharePoint URL of your query index, e.g. <shared-folder-url>/query-index.xlsx
     properties:
       author:
         select: head > meta[name="author"]
         value: |
           attribute(el, 'content')
       title:
-        select: main h1:first-of-type
+        select: head > meta[property="og:title"]
         value: |
-          textContent(el)
+          attribute(el, 'content')
       date:
         select: head > meta[name="publication-date"]
         value: |
-          attribute(el, 'content')
+          dateValue(attribute(el, 'content'), 'MM-DD-YYYY')
       image:
         select: head > meta[property="og:image"]
         value: |
           match(attribute(el, 'content'), 'https:\/\/[^/]+(\/.*)')
-      imageAlt:
-        select: head > meta[property="og:image:alt"]
-        value: |
-          attribute(el, 'content')
       description:
         select: head > meta[name="description"]
         value: |
           attribute(el, 'content')
-      tags:
-        select: head > meta[property="article:tag"]
-        values: |
+      category:
+        select: head > meta[name="category"]
+        value: |
           attribute(el, 'content')
-      robots:
-        select: head > meta[name="robots"]
+      topics:
+        select: head > meta[name="topics"]
         value: |
           attribute(el, 'content')
       lastModified:
         select: none
         value: |
           parseTimestamp(headers['last-modified'], 'ddd, DD MMM YYYY hh:mm:ss GMT')
-
