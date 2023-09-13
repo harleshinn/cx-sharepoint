@@ -125,7 +125,22 @@ function loadDelayed() {
   window.setTimeout(() => import('./delayed.js'), 3000);
   // load anything that can be postponed to the latest here
 }
-
+/**
+ * Clean up variant classes
+ * Ex: marquee--small--contained- -> marquee small contained
+ * @param {HTMLElement} parent
+ */
+ export function cleanVariations(parent) {
+  const variantBlocks = parent.querySelectorAll('[class$="-"]');
+  return Array.from(variantBlocks).map((variant) => {
+    const { className } = variant;
+    const classNameClipped = className.slice(0, -1);
+    variant.classList.remove(className);
+    const classNames = classNameClipped.split('--');
+    variant.classList.add(...classNames);
+    return variant;
+  });
+}
 async function loadPage() {
   await loadEager(document);
   await loadLazy(document);

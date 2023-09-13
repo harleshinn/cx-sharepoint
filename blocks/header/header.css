@@ -312,6 +312,12 @@ header nav .nav-sections ul > li.highlight > ul > li:first-child {
 header nav .nav-tools {
   display: flex;
   justify-content: end;
+
+  position: absolute;
+    top: 28px;
+    right: 8px;
+    z-index: 1;
+    background-color: #fff;
 }
 
 
@@ -324,13 +330,8 @@ header nav .nav-tools p:first-of-type {
 
 @media (min-width: 768px) {
 /* tools */
-header nav .nav-tools {
-  grid-area: tools;
-}
-  header nav .nav-tools p:first-of-type {
-    display: flex;
-  }
-  
+
+
 
   header nav .nav-sections ul.active {
     display: block;
@@ -342,14 +343,14 @@ header nav .nav-tools {
     height: 100vw;
     border-left: 1px solid #e1e1e1;
   }
-  
+
   header nav .nav-sections ul.active > li > ul {
     position: absolute;
     top: 0;
     left: 25vw;
     background-color: #f3f3f3;
   }
-  
+
   header nav .nav-sections ul.active > li > ul > li > ul {
     position: absolute;
     top: 0;
@@ -373,10 +374,8 @@ header nav .nav-tools {
     overflow: hidden;
   }
 
-  
+
 }
-
-
 
 
 header nav .nav-sections > ul > li {
@@ -401,8 +400,6 @@ header nav .nav-drop .nav-drop__title {
   color: var(--link-color);
 }
 
-
-
 header nav .nav-tools a {
     background-color: #293e40;
     color: #fff!important;
@@ -420,4 +417,92 @@ header nav .nav-tools a:focus {
 
 header nav .nav-tools .icon-search {
   margin-left: 20px;
+
+
+    position: absolute;
+    top: 0px;
+    right: 41px;
+}
+.clear-results-button{
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' width='5' height='5' viewBox='0 0 256 256' xml:space='preserve'%3E%3Cdefs%3E%3C/defs%3E%3Cg style='stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;' transform='translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)' %3E%3Cpath d='M 3 90 c -0.768 0 -1.536 -0.293 -2.121 -0.879 c -1.172 -1.171 -1.172 -3.071 0 -4.242 l 84 -84 c 1.172 -1.172 3.07 -1.172 4.242 0 c 1.172 1.171 1.172 3.071 0 4.242 l -84 84 C 4.536 89.707 3.768 90 3 90 z' style='stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;' transform=' matrix(1 0 0 1 0 0) ' stroke-linecap='round' /%3E%3Cpath d='M 87 90 c -0.768 0 -1.535 -0.293 -2.121 -0.879 l -84 -84 c -1.172 -1.171 -1.172 -3.071 0 -4.242 c 1.171 -1.172 3.071 -1.172 4.242 0 l 84 84 c 1.172 1.171 1.172 3.071 0 4.242 C 88.535 89.707 87.768 90 87 90 z' style='stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;' transform=' matrix(1 0 0 1 0 0) ' stroke-linecap='round' /%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: no-repeat no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-color: transparent;
+    padding: 0;
+    flex-basis: 75%;
+    font-family: GilroySemiBold;
+    width: 22px;
+    height: 22px;
+    margin: 1px 7px;
+    text-indent: -99999999px;
+}
+
+.clear-results-button:hover, .clear-results-button:focus{
+  background-color: transparent;
+}
+
+/** Search button **/
+.hide{
+  display: none;
+}
+
+/** gnav search**/
+.gnav-search-field{
+  display: flex;
+    flex-direction: row;
+}
+
+.gnav-search-input{
+  background-color: #f7f7f7;
+  border: 0;
+  border-radius: 2px;
+  font-size: 1.8rem;
+  height: 32px;
+  margin: 0;
+  outline: none;
+  padding: 8px 0 8px 0;
+  text-indent: 20px;
+  vertical-align: top;
+  width: inherit;
+  flex-basis: 75%;
+  font-family: var(--body-font-family);
+}
+
+
+/** Search Results **/
+.search-container{
+  max-width: 1000px;
+  margin: 50px auto;
+}
+.search-container .article-card{
+  display: flex;
+  align-items: center;
+}
+
+.search-container .article-card .article-card-image{
+  flex-basis: 25%;
+}
+
+.search-container .article-card .article-card-body{
+  padding: 0 30px;
+  flex-basis: 75%;
+}
+@media (min-width: 1024px) {
+  header nav .nav-tools p:first-of-type {
+    display: flex;
+
+  }
+  header nav .nav-tools {
+    grid-area: tools;
+    align-items: center;
+    position: relative;
+    top: 0;
+    right: 0;
+    padding-right: 40px;
+  }
+  header nav .nav-tools .icon-search {
+    top: 7px;
+    right: 0;
+  }
 }
