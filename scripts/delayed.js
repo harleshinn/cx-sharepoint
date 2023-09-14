@@ -4,5 +4,4 @@ import { sampleRUM } from './lib-franklin.js';
 // Core Web Vitals RUM collection
 sampleRUM('cwv');
 
-// add more delayed functionality here
 MktoForms2.loadForm("//988-WXR-623.mktoweb.com", "988-WXR-623", 1002);
