@@ -46,7 +46,7 @@ indices:
   customerexperience:
     <<: *default
     include:
-      - /customer-experience/**
+      - '/customer-experience/**'
     exclude:
-      - /customer-experience/index
+      - '/customer-experience/index'
     target: /customer-experience/query-index
