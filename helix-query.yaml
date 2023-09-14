@@ -2,7 +2,7 @@ version: 1
 # See https://www.hlx.live/docs/setup-indexing.
 
 indices:
-  default:
+  allpages: &default
     include:
       - '/**'
     target: /query-index
@@ -18,7 +18,7 @@ indices:
       date:
         select: head > meta[name="publication-date"]
         value: |
-          attribute(el, 'content')
+          dateValue(attribute(el, 'content'), 'MM-DD-YYYY')
       image:
         select: head > meta[property="og:image"]
         value: |
