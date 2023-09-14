@@ -2,7 +2,7 @@ import { createOptimizedPicture } from '../../scripts/lib-franklin.js';
 import createTag from '../../utils/tag.js';
 
 async function fetchBlogArticleIndex() {
-  const index = '/assets/json/docpages-index.json';
+  const index = '/query-index.json' ;
   const resp = await fetch(index);
   const json = await resp.json();
   const lookup = {};
@@ -21,10 +21,10 @@ function decorateCard(hit) {
   const pictureTag = picture.outerHTML;
   const html = `<div class="cards-card-image">${pictureTag}</div>
       <div class="cards-card-body">
-        <h4>${title}</h4>
+        <h4><a href="${path}">${title}</a></h4>
         <p>${description}</p>
       </div>`;
-  return createTag('li', { href: path, class: 'cards' }, html);
+  return createTag('li', { class: 'cards' }, html);
 }
 
 function highlightTextElements(terms, elements) {
@@ -106,6 +106,11 @@ async function populateSearchResults(searchTerms, resultsContainer) {
     }
 
     highlightTextElements(terms, resultsContainer.querySelectorAll('h3, .article-card-category, .article-card-body > p'));
+  }else{
+    sectionHidden.forEach((element) => {
+        element.classList.toggle('hide');
+    });
+    resultsContainer.classList.toggle('hide');
   }
 }
 

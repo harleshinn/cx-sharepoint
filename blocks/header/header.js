@@ -241,7 +241,6 @@ export default async function decorate(block) {
   }
 }
 
-const IS_OPEN = 'is-open';
 
 class Gnav {
   constructor(body, el) {
