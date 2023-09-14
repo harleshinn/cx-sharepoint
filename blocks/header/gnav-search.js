@@ -14,10 +14,10 @@ async function fetchBlogArticleIndex() {
 
 function decorateCard(hit) {
   const {
-    title, description, image,
+    title, description, image, imageAlt
   } = hit;
   const path = hit.path.split('.')[0];
-  const picture = createOptimizedPicture(image, title, false, [{ width: '750' }]);
+  const picture = createOptimizedPicture(image, imageAlt?imageAlt:title, false, [{ width: '750' }]);
   const pictureTag = picture.outerHTML;
   const html = `<div class="cards-card-image">${pictureTag}</div>
       <div class="cards-card-body">
