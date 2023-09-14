@@ -4,7 +4,7 @@
  */
 export default async function decorate(block) {
   console.log('arrived!');
-  const marketoForm = `<form id="mktoForm_621"></form>`;
+  const marketoForm = `<form id="mktoForm_621" class="mktoForm"></form>`;
   const formContainer =  document.querySelector('.form-subscribe div:nth-child(3)');
   formContainer.innerHTML = marketoForm;
 }
