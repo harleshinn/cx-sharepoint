@@ -3,17 +3,18 @@ version: 1
 
 indices:
   default:
+    include:
+      - '/**'
     target: /query-index
-    # target: SharePoint URL of your query index, e.g. <shared-folder-url>/query-index.xlsx
     properties:
       author:
         select: head > meta[name="author"]
         value: |
           attribute(el, 'content')
       title:
-        select: main h1:first-of-type
+        select: head > meta[property="og:title"]
         value: |
-          textContent(el)
+          attribute(el, 'content')
       date:
         select: head > meta[name="publication-date"]
         value: |
@@ -38,39 +39,8 @@ indices:
         select: none
         value: |
           parseTimestamp(headers['last-modified'], 'ddd, DD MMM YYYY hh:mm:ss GMT')
-  customer-experience:
+  customerexperience:
+    <<: *default
+    include:
+      - /customer-experience/**
     target: /customer-experience/query-index
-    # target: SharePoint URL of your query index, e.g. <shared-folder-url>/query-index.xlsx
-    properties:
-      author:
-        select: head > meta[name="author"]
-        value: |
-          attribute(el, 'content')
-      title:
-        select: main h1:first-of-type
-        value: |
-          textContent(el)
-      date:
-        select: head > meta[name="publication-date"]
-        value: |
-          attribute(el, 'content')
-      image:
-        select: head > meta[property="og:image"]
-        value: |
-          match(attribute(el, 'content'), 'https:\/\/[^/]+(\/.*)')
-      imageAlt:
-        select: head > meta[property="og:image-alt"]
-        value: |
-          attribute(el, 'content')
-      description:
-        select: head > meta[name="description"]
-        value: |
-          attribute(el, 'content')
-      tags:
-        select: head > meta[property="article:tag"]
-        values: |
-          attribute(el, 'content')
-      lastModified:
-        select: none
-        value: |
-          parseTimestamp(headers['last-modified'], 'ddd, DD MMM YYYY hh:mm:ss GMT')
