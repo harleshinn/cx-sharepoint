@@ -43,4 +43,6 @@ indices:
     <<: *default
     include:
       - /customer-experience/**
+    exclude:
+      - /customer-experience/index
     target: /customer-experience/query-index
