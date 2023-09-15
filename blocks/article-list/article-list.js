@@ -25,7 +25,7 @@ function buildArticle(article) {
 }
 
 export default async function decorate(block) {
-    const ARTICLES_PER_PAGE = 1;
+    const ARTICLES_PER_PAGE = 4;
 
     // Create container
     const articlesContainer = document.createElement('ul');
