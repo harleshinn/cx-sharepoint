@@ -20,7 +20,22 @@
 
 .form-subscribe .form-subscribe__form .mktoFieldWrap {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
+  padding-bottom: 8px;
+}
+
+.form-subscribe .form-subscribe__form .mktoLogicalField {
+  display: none;
+}
+
+.form-subscribe .form-subscribe__form .mktoLabel {
+  display: block;
+  min-width: 100%;
+  font-size: 14px;
+}
+
+.form-subscribe .form-subscribe__form .mktoRequiredField .mktoLabel {
+  display: none;
 }
 
 .form-subscribe .form-subscribe__form .mktoFieldWrap .mktoField {
@@ -33,7 +48,14 @@
 
 .form-subscribe .form-subscribe__form .mktoFieldWrap .mktoField:focus {
   outline: 1px solid #81b5a1;
+  border: 0 !important;
 }
+
+.mktoInvalid {
+  outline: 1px solid #b33233 !important;
+}
+
+
 
 .form-subscribe .form-subscribe__form .mktoButtonWrap {
   margin-left: 0 !important;
@@ -49,4 +71,34 @@
   .form-subscribe .form-subscribe__asset {
     width: 50%;
   } 
+}
+
+/* Status Styles */
+.form-subscribe .form-subscribe__form .mktoError {
+  right: unset !important;   
+  bottom: unset !important;
+  margin-top: 4px;
+  position: relative;
+}
+
+.form-subscribe .form-subscribe__form .mktoError .mktoErrorArrowWrap {
+  display: none;
+}
+
+.form-subscribe .form-subscribe__form .mktoForm .mktoError .mktoErrorMsg {
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+  color: #b33233;
+  text-shadow: none;
+  display: flex;
+  border: none;
+  margin-top: 0;
+  padding: 0;
+  max-width: unset;
+}
+
+.form-subscribe .form-subscribe__form .mktoForm .mktoError .mktoErrorMsg::before {
+  content: '⚠️';
+  display: flex
 }
