@@ -143,7 +143,7 @@ export default async function decorate(block) {
     }
     /* EventListener for seach button */
     const navTools = nav.querySelector('.nav-tools .icon-search');
-
+    
     navTools.addEventListener('click', (e) => {
       toggleSearch();
     });
@@ -331,6 +331,8 @@ class Gnav {
     if (this.onSearchInput) return;
     const gnavSearch = await import('./gnav-search.js');
     this.onSearchInput = gnavSearch.default;
+    const searchContainer = document.querySelector('.search-container');
+    searchContainer.style.display = 'block';
   };
 
   clearSearchInput = () => {

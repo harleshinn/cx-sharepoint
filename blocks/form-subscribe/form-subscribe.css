@@ -1,0 +1,52 @@
+.form-subscribe .form-subscribe__wrapper {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.form-subscribe .form-subscribe__form {
+  margin: 20px 24px;
+  padding: 0 20px;
+}
+
+.form-subscribe .form-subscribe__form .mktoForm {
+  width: 100% !important;
+  
+}
+
+.form-subscribe .form-subscribe__form .mktoForm .mktoFormCol,
+.form-subscribe .form-subscribe__form .mktoFieldWrap {
+  float: none;
+}
+
+.form-subscribe .form-subscribe__form .mktoFieldWrap {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.form-subscribe .form-subscribe__form .mktoFieldWrap .mktoField {
+  border: 0;
+  padding: 20px 10px 20px;
+  min-width: 100% !important;
+  display: block;
+  border-radius: 0;
+}
+
+.form-subscribe .form-subscribe__form .mktoFieldWrap .mktoField:focus {
+  outline: 1px solid #81b5a1;
+}
+
+.form-subscribe .form-subscribe__form .mktoButtonWrap {
+  margin-left: 0 !important;
+}
+
+@media screen and (min-width: 1024px) {
+  .form-subscribe .form-subscribe__wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .form-subscribe .form-subscribe__form,
+  .form-subscribe .form-subscribe__asset {
+    width: 50%;
+  } 
+}
