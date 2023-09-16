@@ -10,7 +10,6 @@
 
 .form-subscribe .form-subscribe__form .mktoForm {
   width: 100% !important;
-  
 }
 
 .form-subscribe .form-subscribe__form .mktoForm .mktoFormCol,
@@ -79,6 +78,7 @@
   bottom: unset !important;
   margin-top: 4px;
   position: relative;
+  z-index: unset !important;
 }
 
 .form-subscribe .form-subscribe__form .mktoError .mktoErrorArrowWrap {
@@ -99,6 +99,6 @@
 }
 
 .form-subscribe .form-subscribe__form .mktoForm .mktoError .mktoErrorMsg::before {
-  content: '⚠️';
+  content: url(https://main--cx-demo--harleshinn.hlx.page/assets/ui/icon-error.svg);
   display: flex
 }
