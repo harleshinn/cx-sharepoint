@@ -1,0 +1,94 @@
+main .article-list-container {
+  padding-left: 40px;
+  padding-right: 40px;
+  max-width: 1700px;
+  margin: 0 auto;
+}
+
+.article-list-container .article-list-wrapper {
+  margin-top: 56px;
+}
+
+.article-list-container .article-list-wrapper h2 {
+  font-size: 48px;
+}
+
+.article-list-container .article-list-wrapper .article-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.article-list-container .article-list-wrapper .article-list .article-cards {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 40px;  
+}
+
+.article-list-container .article-list-wrapper .article-list .article-cards li {
+  background-color: #fff;
+}
+
+.article-list-container .article-cards .article-card-content h5 {
+  font-family: GilroyBold;
+  font-size: 12px;
+  letter-spacing: .1rem;
+  line-height: 1;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.article-list-container .article-cards .article-card-content h4 {
+    margin-bottom: 16px;
+    font-size: 20px;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+.article-list-container .article-cards .article-card-content p {
+  margin-bottom: 16px;
+  font-size: 18px;
+}
+
+
+/* Pagination */
+.article-list-container .article-list-wrapper .articles-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 0;
+  border-bottom: 1px solid rgba(41,62,64,0.2);
+  padding-bottom: 16px;
+  color: #5b6f70;
+  font-size: 14px;
+}
+
+.article-list-container .article-list-wrapper .secondary-button {
+  margin: 0;
+  display: flex;
+  align-self: center;
+  height: 48px;
+  font-size: 18px;
+  line-height: 48px;
+  margin-bottom: 80px;
+  padding-left: 40px;
+  padding-right: 40px;
+  background: transparent;
+  border: 1px solid rgba(41,62,64,0.2);
+  color: #000;
+  transition: background .1s linear;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-radius: 0;
+}
+
+.article-list-container .article-list-wrapper .secondary-button:hover {
+  background: rgba(41,62,64,0.2);
+}

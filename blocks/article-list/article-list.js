@@ -7,17 +7,18 @@ async function fetchArticles() {
 }
 
 function buildArticle(article) {
+    console.log('article contains: ', article)
     const picture = createOptimizedPicture(article.image, article.imageAlt, true, [{ width: '750' }])
     
     const articleEl = document.createElement('li');
     articleEl.innerHTML = `
-    <div class="articles-article-image">
+    <div class="article-card-image">
         ${picture.outerHTML}
     </div>
-    <div class="articles-article-body">
+    <div class="article-card-content">
         <h5>Article</h5>
         <h4>${article.title}</h4>
-        <p><${article.description}/p>
+        <p>${article.description}</p>
     </div>
     `;
 
@@ -52,8 +53,11 @@ export default async function decorate(block) {
     // Add button and number of articles
     const articles = articlesContainer.childNodes;
     const loadMoreButton = document.createElement('button');
+    loadMoreButton.setAttribute('type', 'button');
+    loadMoreButton.classList.add('secondary-button');
     loadMoreButton.innerText = 'Load more';
     const paginationText = document.createElement('p');
+    paginationText.classList.add('articles-pagination');
     paginationText.innerText = `1 - ${pageMax} of ${articlesCount}`;
     loadMoreButton.addEventListener('click', function() {
         // Load more articles
