@@ -99,6 +99,6 @@
 }
 
 .form-subscribe .form-subscribe__form .mktoForm .mktoError .mktoErrorMsg::before {
-  content: url(https://main--cx-demo--harleshinn.hlx.page/assets/ui/icon-error.svg);
-  display: flex
+  content: url('/icons/icon-error.svg');
+  display: flex;
 }
