@@ -18,7 +18,7 @@ import {
  * @returns {HTMLElement} The root element of the fragment
  */
 async function loadFragment(path) {
-  if (path && path.startsWith('/')) {
+  if (path) {
     const resp = await fetch(`${path}.plain.html`);
     if (resp.ok) {
       const main = document.createElement('main');
@@ -32,8 +32,17 @@ async function loadFragment(path) {
 }
 
 export default async function decorate(block) {
-  const link = block.querySelector('a');
-  const path = link ? link.getAttribute('href') : block.textContent.trim();
+
+  let path;
+  const matches = Array.from(
+    document.querySelectorAll('.fragment'),
+  ).filter(element => element.textContent.includes('http'));
+
+  matches.forEach(match => {
+    var url = new URL(match.textContent.trim())
+    path = url.pathname;
+  });
+
   const fragment = await loadFragment(path);
   if (fragment) {
     const fragmentSection = fragment.querySelector(':scope .section');
