@@ -139,8 +139,7 @@ export default async function decorate(block) {
     }
     /* EventListener for seach button */
     const navTools = nav.querySelector('.nav-tools .icon-search');
-    const searchNav = await buildSeachNav();
-    block.prepend(searchNav);
+    await buildSeachNav();
 
 
 
