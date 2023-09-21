@@ -60,6 +60,7 @@ async function populateSearchResults(searchTerms, resultsContainer) {
   const terms = searchTerms.toLowerCase().split(' ').map((e) => e.trim()).filter((e) => !!e);
   const nav = document.querySelector('.gnav');
   const sectionHidden = document.querySelectorAll('.section');
+  const resultsWrapper = document.querySelector('.search-container');
   resultsContainer.innerHTML = '';
 
   if (terms.length) {
@@ -89,7 +90,6 @@ async function populateSearchResults(searchTerms, resultsContainer) {
     });
 
     if (!hits.length) {
-      resultsContainer.classList.add('no-Results');
       sectionHidden.forEach((element) => {
         if(element.classList.contains('hide')){
           element.classList.toggle('hide');
@@ -97,7 +97,9 @@ async function populateSearchResults(searchTerms, resultsContainer) {
       });
 
     } else {
-      resultsContainer.classList.remove('no-Results');
+      if(resultsWrapper.classList.contains('hide')){
+        resultsWrapper.classList.toggle('hide');
+      }
       sectionHidden.forEach((element) => {
         if(!element.classList.contains('hide')){
           element.classList.toggle('hide');
@@ -110,7 +112,7 @@ async function populateSearchResults(searchTerms, resultsContainer) {
     sectionHidden.forEach((element) => {
         element.classList.toggle('hide');
     });
-    resultsContainer.classList.toggle('hide');
+    resultsWrapper.classList.toggle('hide');
   }
 }
 
