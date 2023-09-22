@@ -43,6 +43,10 @@ indices:
         select: none
         value: |
           parseTimestamp(headers['last-modified'], 'ddd, DD MMM YYYY hh:mm:ss GMT')
+      navigation: 
+        select: head > meta[name="navigation"]
+        value: |
+          attribute(el, 'content')
   customerexperience:
     <<: *default
     include:
