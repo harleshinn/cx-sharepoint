@@ -7,11 +7,10 @@ async function fetchArticles() {
 }
 
 function buildArticle(article) {
-    console.log('article contains: ', article)
     const picture = createOptimizedPicture(article.image, article.imageAlt, true, [{ width: '750' }])
     
     const articleEl = document.createElement('li');
-    articleEl.innerHTML = `
+    articleEl.innerHTML = `<a href="${article.path}" class="article-card-link">
     <div class="article-card-image">
         ${picture.outerHTML}
     </div>
@@ -19,7 +18,7 @@ function buildArticle(article) {
         <h5>Article</h5>
         <h4>${article.title}</h4>
         <p>${article.description}</p>
-    </div>
+    </div></a>
     `;
 
     return articleEl;
