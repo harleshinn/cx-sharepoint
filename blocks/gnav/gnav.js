@@ -98,7 +98,7 @@ class Gnav {
   };
 
   clearSearchInput = () => {
-    toggleSearch();
+    this.toggleSearch();
   };
 }
 export default async function init(blockEl) {

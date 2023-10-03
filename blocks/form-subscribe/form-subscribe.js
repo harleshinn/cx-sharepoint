@@ -22,7 +22,7 @@ export default async function decorate(block) {
   formContainer.insertAdjacentHTML('beforeend', marketoForm);
 
   // Custom Form Validation
-  MktoForms2.whenRendered(function (form) {
+  MktoForms2.whenRendered((form) => {
     const formEl = form.getFormElem()[0].querySelectorAll('.mktoRequiredField');
     formEl.forEach((field) => {
       field.addEventListener('blur', () => {

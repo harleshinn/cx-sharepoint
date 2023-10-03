@@ -10,8 +10,7 @@ export default function decorate(block) {
       if (div.children.length === 1 && div.querySelector('picture')) div.className = 'cards-card-image';
       else div.className = 'cards-card-body';
       if (div.childNodes.length > 0) {
-        const childNodes = div.childNodes;
-        childNodes.forEach((el) => {
+        [...div.children].forEach((el) => {
           if (el.innerHTML) {
             if (el.innerHTML.indexOf('subheadline') > 0 || el.innerHTML.indexOf('headline') > 0) {
               let elClass = el.innerHTML.replace(/^.+-/, '');
@@ -32,7 +31,7 @@ export default function decorate(block) {
   block.textContent = '';
   block.append(ul);
 
-  const visible = function (partial, el) {
+  const visible = (partial, el) => {
     const viewTop = window.scrollY + 100;
     const viewBottom = viewTop + window.innerHeight - 100;
     const elTop = el.offsetTop;
@@ -42,7 +41,7 @@ export default function decorate(block) {
     return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
   };
 
-  window.addEventListener('scroll', function () {
+  window.addEventListener('scroll', () => {
     const allElem = document.querySelectorAll('.slideup li');
     allElem.forEach((el, i) => {
       if (visible(true, el)) {

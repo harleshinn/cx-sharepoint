@@ -58,7 +58,7 @@ export default async function decorate(block) {
   const paginationText = document.createElement('p');
   paginationText.classList.add('articles-pagination');
   paginationText.innerText = `1 - ${pageMax} of ${articlesCount}`;
-  loadMoreButton.addEventListener('click', function () {
+  loadMoreButton.addEventListener('click', () => {
     // Load more articles
     pageMax = Math.min(articlesOffset + ARTICLES_PER_PAGE, articlesCount);
     while (articlesOffset !== pageMax) {
