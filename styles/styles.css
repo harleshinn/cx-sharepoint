@@ -12,16 +12,27 @@
 
  :root {
   /* colors */
-  --link-color: #035fe6;
-  --link-hover-color: #136ff6;
+  --link-color: #000;
+  --link-hover-color: #62d84e;
   --background-color: #fff;
   --overlay-background-color: #eee;
   --highlight-background-color: #ccc;
   --text-color: #000;
 
+  /* SN Brand Colors */
+  --brand-green: #86ed78;
+  --brand-green-darker: #62d84e;
+  --brand-blue: #032d42;
+  --brand-blue-lighter: #1a5d68;
+  --brand-black: #000;
+  --brand-gray: #999;
+
+  --btn-border-radius: 6px;
+  --brand-opacity: 0.5;
+
   /* fonts */
-  --body-font-family: roboto, roboto-fallback;
-  --heading-font-family: var(--body-font-family);
+  --body-font-family: GilroyRegular, roboto, roboto-fallback;
+  --heading-font-family: GilroyBold, roboto, roboto-fallback;
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
 
   /* body sizes */
@@ -65,7 +76,7 @@ body {
   font-size: var(--body-font-size-m);
   margin: 0;
   font-family: var(--body-font-family);
-  line-height: 1.6;
+  line-height: 1.7;
   color: var(--text-color);
   background-color: var(--background-color);
   display: none;
@@ -83,9 +94,9 @@ h1, h2, h3,
 h4, h5, h6 {
   font-family: var(--heading-font-family);
   font-weight: 600;
-  line-height: 1.25;
-  margin-top: 1em;
-  margin-bottom: .5em;
+  line-height: 1.3;
+  margin-top: 0;
+  margin-bottom: 8px;
   scroll-margin: calc(var(--nav-height) + 1em);
 }
 
@@ -97,8 +108,14 @@ h5 { font-size: var(--heading-font-size-s) }
 h6 { font-size: var(--heading-font-size-xs) }
 
 p, dl, ol, ul, pre, blockquote {
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 768px) {
+  p, dl, ol, ul, pre, blockquote {
+    margin-bottom: 32px;
+  }
 }
 
 hr {
@@ -135,8 +152,7 @@ a:any-link {
 }
 
 a:hover {
-  text-decoration: underline;
-  color: var(--link-hover-color);
+  text-decoration: none;
 }
 
 /* buttons */
@@ -146,23 +162,40 @@ a.button:any-link, button {
   box-sizing: border-box;
   text-decoration: none;
   border: 2px solid transparent;
-  padding: 5px 30px;
   text-align: center;
+  font-size: 14px;
   font-style: normal;
   font-weight: 600;
   cursor: pointer;
-  color: var(--background-color);
-  background-color: var(--link-color);
+  color: var(--brand-black);
+  background-color: var(--brand-green-darker);
   margin: 16px 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  border-radius: 30px;
+  letter-spacing: 0.03rem;
+  line-height: 1.3;
+  outline: 0;
+  padding: 13px 34px;
+  border-radius: var(--btn-border-radius);
 }
 
 a.button:hover, a.button:focus, button:hover, button:focus  {
-  background-color: var(--link-hover-color);
+  background-color: var( --brand-green);
   cursor: pointer;
+}
+
+main .section a {
+  /*border-bottom: 2px solid var(--link-hover-color);*/
+  background-image: linear-gradient(var(--link-hover-color), var(--link-hover-color));
+  background-size: .1rem .1rem;
+  background-repeat: repeat-x;
+  background-position: bottom;
+  transition: background-size .2s ease-in-out;
+}
+
+main .section a:hover {
+  background-size: 100% 100%;
 }
 
 button:disabled, button:disabled:hover {
@@ -243,9 +276,4 @@ main .section {
     max-width: 1200px;
     margin: auto;
   }
-}
-
-/* section metadata */
-main .section.highlight {
-  background-color: var(--highlight-background-color);
 }
